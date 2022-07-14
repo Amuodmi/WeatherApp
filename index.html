@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./assets/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@400&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			defer
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+		></script>
+		<script
+			src="https://kit.fontawesome.com/2709e5a0b2.js"
+			crossorigin="anonymous"
+		></script>
+		<script defer src="assets/script.js"></script>
+		<title>Weather Dashboard</title>
+	</head>
+
+	<body>
+		<div class="title">
+			Weather Dashboard <i class="fa-solid fa-cloud-meatball"></i>
+		</div>
+
+		<div class="page-content">
+			<!-- city search and history -->
+			<section class="city-search">
+				<form class="city-section column">
+					<h1>City Search:</h1>
+					<input type="text" class="search-bar" />
+					<p class="btn search-button">Search</p>
+
+					<!--previous searches show here-->
+					<h1>History:</h1>
+					<p class="btn delete-button">Clear History</p>
+					<div class="historySection"></div>
+				</form>
+			</section>
+			<!--city search end-->
+
+			<!-- Displays forecast of selected city for that day -->
+			<section class="weather-forecast">
+				<div class="column city-weather">
+					<div class="city-title">
+						<h2 class="city-name">City:</h2>
+						<h4 class="current-date"></h4>
+					</div>
+					<div class="weather-header">
+						<img src="" alt="" class="icon" />
+						<p class="description"></p>
+					</div>
+					<p class="temp">Temperature:</p>
+					<p class="wind">Wind:</p>
+					<p class="humidity">Humidity:</p>
+					<p class="UVindex">UV Index:</p>
+					<div class="UVcolor"></div>
+				</div>
+
+				<!-- shows weather for the next 5 days -->
+				<h1 class="forecast-title">5-Day Forecast</h1>
+
+				<!-- card container -->
+				<div class="forecast">
+					<!-- day 1 -->
+					<div class="column forecast-box">
+						<h5>Date</h5>
+						<img src="" />
+						<h6>Temperature</h6>
+						<h6>Humidity</h6>
+						<h6>Wind</h6>
+					</div>
+
+					<!-- day 2 -->
+					<div class="column forecast-box">
+						<h5>Date</h5>
+						<img src="" />
+						<h6>Temperature</h6>
+						<h6>Humidity</h6>
+						<h6>Wind</h6>
+					</div>
+
+					<!-- day 3 -->
+					<div class="column forecast-box">
+						<h5>Date</h5>
+						<img src="" />
+						<h6>Temperature</h6>
+						<h6>Humidity</h6>
+						<h6>Wind</h6>
+					</div>
+
+					<!-- day 4 -->
+					<div class="column forecast-box">
+						<h5>Date</h5>
+						<img src="" />
+						<h6>Temperature</h6>
+						<h6>Humidity</h6>
+						<h6>Wind</h6>
+					</div>
+
+					<!-- day 5 -->
+					<div class="column forecast-box">
+						<h5>Date</h5>
+						<img src="" />
+						<h6>Temperature</h6>
+						<h6>Humidity</h6>
+						<h6>Wind</h6>
+					</div>
+				</div>
+				<!-- forecast card container end -->
+			</section>
+			<!-- entire forecast containter end-->
+		</div>
+		<!--page content end-->
+	</body>
+</html>
