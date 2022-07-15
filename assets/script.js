@@ -11,18 +11,19 @@ if (searchHistory) {
 }
 
 //the city parameter comes from searchCities click, grabs latitude/longitude, and passes that to fetchWeather:
-let weather = {
+var weather = {
 
     // find coordinates
     fetchCoords: function (city) {
 
-        // finds the longitude and latitude coords based on city name:
+        // finds the longitude and latitude coordinates based on city name:
         fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=5&appid=96f33839c85744a54cc32451f4cf28cb")
 
             // parses the data then sets parameter for fetchWeather:
             .then((response) => response.json())
             .then((data) => this.fetchWeather(data));
     },
+
     // uses coordinates to find the weather for the city, and then passes that data to displayWeather:
     fetchWeather: function (data) {
         document.querySelector(".city-name").innerText = data[0].name + ", " + data[0].state;
@@ -38,7 +39,8 @@ let weather = {
     // uses data parameter to find specific endpoints, displays all the data to the screen, including a 5 day forecast:
     displayWeather: function (data) {
         var date = new Date(data.current.dt * 1000).toLocaleString();
-        // puts the correct data on the screen
+
+        // puts the data on the page:
         $(".current-date").text(date);
         $(".icon").attr('src', "https://openweathermap.org/img/wn/" + data.current.weather[0].icon + ".png");
         $(".description").text(data.current.weather[0].main);
@@ -54,7 +56,7 @@ let weather = {
             $(".UVindex").removeClass("UVindexLight UVindexModerate").addClass("UVindexHigh")
         }
 
-        //create the 5 forecast boxes:
+        //creates the forecast boxes:
         function forecastBoxes() {
             forecastEl = $(".forecast");
             forecastEl.empty();
@@ -90,6 +92,7 @@ let weather = {
             if (!savedCities) {
                 savedCities = [];
             }
+
             //adds search to local storage:
             savedCities.push(previousCities);
             localStorage.setItem('cities', JSON.stringify(savedCities));
@@ -97,7 +100,7 @@ let weather = {
             var prevCity = $('<p>').addClass("btn history-button").text(city);
             searchHistoryEl.append(prevCity);
         }
-    }
+  
     //if event to click on the previous search options:
     if (event.target.matches('.history-button')) {
         console.log(event.target.innerHTML)
@@ -114,15 +117,16 @@ let weather = {
         (event.key === "Enter"); {
               $("btn delete-button").click();
             };
-    }
-}
+    }}
+//couldnt get this stupid thing to work:
+// }   var input = document.getElementsByClassName("search-bar")[0];
+// input.addEventListener("keyup", function(event) {
+// if (event.keyCode === 13); {
+//  event.preventDefault();
+//  document.getElementsByClassName(".city-search").click();
+// }
+// });
 
-var input = document.getElementsByClassName("search-bar");
-input.addEventListener("keypress", function(event) {
-  if (event.keyCode === 13); {
-    //event.preventDefault();
-    document.getElementsByClassName("searchCities").click();
-  }
-  });
+}//end of searchCities function
 
-$(".city-search").click(searchCities);
+  $(".city-search").click(searchCities);
