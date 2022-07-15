@@ -85,6 +85,9 @@ var weather = {
   function searchCities(event) {
     // sends search-bar value to fetchCoords, checks for search history, than makes new button for city searched:
     if (event.target.matches('.search-button')) {
+        // (event.key === "Enter"); {
+        //     $("btn search-button").click();
+        //   };
         if ($('.search-bar').val() !== "") {
             const city = $('.search-bar').val().trim();
             previousCities.city = city;
@@ -100,7 +103,8 @@ var weather = {
             var prevCity = $('<p>').addClass("btn history-button").text(city);
             searchHistoryEl.append(prevCity);
         }
-  
+    }   
+
     //if event to click on the previous search options:
     if (event.target.matches('.history-button')) {
         console.log(event.target.innerHTML)
@@ -117,16 +121,7 @@ var weather = {
         (event.key === "Enter"); {
               $("btn delete-button").click();
             };
-    }}
-//couldnt get this stupid thing to work:
-// }   var input = document.getElementsByClassName("search-bar")[0];
-// input.addEventListener("keyup", function(event) {
-// if (event.keyCode === 13); {
-//  event.preventDefault();
-//  document.getElementsByClassName(".city-search").click();
-// }
-// });
-
+    }
 }//end of searchCities function
 
   $(".city-search").click(searchCities);
