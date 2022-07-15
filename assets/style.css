@@ -103,7 +103,6 @@ body {
 	background-color: rgba(246, 248, 246, 0.99);
 }
 
-
 .delete-button {
 	width: 90%;
 	margin: 0 5% 10px 5%;
@@ -111,12 +110,14 @@ body {
 	font-size: 20px;
 	border-radius: 5px;
 	color: whitesmoke;
-	background-color: rgba(138, 38, 80, 0.579);
+	opacity: 0.7;
+	background-color: rgba(244, 132, 132, 0.915);
 }
 
 .delete-button:hover {
 	cursor: pointer;
-	background-color: rgba(138, 38, 80, 0.9);
+	opacity: 1;
+	background-color: rgba(244, 132, 132, 0.915);
 }
 
 .delete-button:active {
@@ -130,18 +131,20 @@ body {
 	height: 35px;
 	font-size: 20px;
 	border-radius: 5px;
-	background-color: rgba(78, 38, 138, 0.579);
+	opacity: 0.7;
+	background-color: rgba(81, 134, 240, 0.849);
 }
 
 .history-button:hover {
 	cursor: pointer;
-	background-color: rgba(78, 38, 138, 0.9);
+	opacity: 1;
+	background-color: rgba(81, 134, 240, 0.849);
 }
 
-.history-button:active {
+/* .history-button:active {
 	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
 		rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
+} */
 
 /* box displaying current weather */
 .city-weather {
@@ -294,7 +297,7 @@ h5 {
 		width: 300px;
 	}
 
-	.forecast-card {
+	.forecast-box {
 		margin: 1vh;
 		width: 200px;
 		height: 200px;
